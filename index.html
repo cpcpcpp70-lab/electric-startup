@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>전기창업경영연구원 - 전기공사업 면허 전문</title>
+<meta name="description" content="전기공사업 신규창업 및 M&A 매입 전문 컨설팅. 전기창업경영연구원에서 빠르고 안전하게 면허를 취득하세요.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background: #f8f9fb;
+    color: #0a2540;
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+
+  /* 히어로 */
+  .hero { background: #0a2540; padding: 3rem 1.5rem 2.5rem; text-align: center; }
+  .badge { display: inline-block; background: #f5a623; color: #5a3500; font-size: 11px; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.04em; }
+  .hero h1 { font-size: 24px; font-weight: 700; color: white; line-height: 1.4; margin-bottom: 0.6rem; }
+  .hero p { font-size: 14px; color: #94a3b8; line-height: 1.8; margin-bottom: 2rem; }
+  .cta-row { display: flex; gap: 10px; }
+  .btn-call { flex: 1; background: #f5a623; color: #3a2500; border: none; padding: 15px 0; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; }
+  .btn-kakao { flex: 1; background: #fee500; color: #3a2500; border: none; padding: 15px 0; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px; text-decoration: none; }
+
+  /* 공통 섹션 */
+  .section { padding: 2rem 1.25rem; }
+  .section-title { font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem; text-align: center; }
+  .section-heading { font-size: 18px; font-weight: 700; color: #0a2540; text-align: center; margin-bottom: 0.4rem; }
+  .section-sub { font-size: 13px; color: #64748b; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; }
+
+  /* 서비스 카드 */
+  .service-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .service-card { background: white; border-radius: 18px; padding: 1.5rem 1rem; text-align: center; border: 1px solid #e8edf3; }
+  .svc-icon { width: 52px; height: 52px; border-radius: 14px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; }
+  .service-card h3 { font-size: 15px; font-weight: 700; color: #0a2540; margin-bottom: 0.5rem; }
+  .service-card p { font-size: 12px; color: #64748b; line-height: 1.7; }
+
+  /* 선택 이유 */
+  .points { background: white; border-radius: 18px; overflow: hidden; border: 1px solid #e8edf3; }
+  .point-item { display: flex; align-items: flex-start; gap: 14px; padding: 1.1rem 1.25rem; border-bottom: 1px solid #f1f5f9; }
+  .point-item:last-child { border-bottom: none; }
+  .point-num { width: 30px; height: 30px; border-radius: 50%; background: #0a2540; color: white; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .point-text h4 { font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 3px; }
+  .point-text p { font-size: 12px; color: #64748b; line-height: 1.6; }
+
+  /* ── 진행 절차 ── */
+  .steps-wrap { position: relative; }
+  .step-item { display: flex; gap: 14px; margin-bottom: 0; position: relative; }
+  .step-left { display: flex; flex-direction: column; align-items: center; width: 36px; flex-shrink: 0; }
+  .step-circle { width: 36px; height: 36px; border-radius: 50%; background: #0a2540; color: white; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; }
+  .step-line { width: 2px; background: #e2e8f0; flex: 1; min-height: 24px; }
+  .step-item:last-child .step-line { display: none; }
+  .step-content { padding: 6px 0 28px; flex: 1; }
+  .step-content h4 { font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 4px; }
+  .step-content p { font-size: 12px; color: #64748b; line-height: 1.6; }
+  .step-tag { display: inline-block; background: #e6f1fb; color: #185fa5; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-bottom: 6px; }
+  .step-tag.amber { background: #faeeda; color: #ba7517; }
+
+  /* ── 비교표 ── */
+  .compare-section { background: #0a2540; padding: 2rem 1.25rem; }
+  .compare-section .section-heading { color: white; }
+  .compare-section .section-sub { color: #64748b; }
+  .compare-table { width: 100%; border-collapse: collapse; }
+  .compare-table th { padding: 10px 8px; font-size: 13px; font-weight: 700; text-align: center; }
+  .compare-table th.label-col { text-align: left; color: #94a3b8; width: 35%; }
+  .compare-table th.startup-col { background: #1e3a5f; color: #93c5fd; border-radius: 10px 10px 0 0; width: 32.5%; }
+  .compare-table th.ma-col { background: #3a2800; color: #fcd34d; border-radius: 10px 10px 0 0; width: 32.5%; }
+  .compare-table td { padding: 10px 8px; font-size: 12px; text-align: center; border-top: 1px solid #1e3a5f; color: #cbd5e1; }
+  .compare-table td.label { text-align: left; color: #94a3b8; font-size: 11px; }
+  .compare-table td.startup-val { background: #1e3a5f; color: white; }
+  .compare-table td.ma-val { background: #3a2800; color: white; }
+  .compare-table tr:last-child td.startup-val { border-radius: 0 0 0 0; }
+  .compare-table tr:last-child td.ma-val { border-radius: 0 0 0 0; }
+  .compare-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; }
+  .badge-blue { background: #1e4a7a; color: #93c5fd; }
+  .badge-amber { background: #5a3d00; color: #fcd34d; }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item { background: white; border-radius: 14px; border: 1px solid #e8edf3; overflow: hidden; }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; cursor: pointer; gap: 10px; }
+  .faq-q-text { font-size: 14px; font-weight: 700; color: #0a2540; line-height: 1.5; flex: 1; }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.2s; }
+  .faq-icon svg { transition: transform 0.2s; }
+  .faq-item.open .faq-icon svg { transform: rotate(180deg); }
+  .faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 13px; color: #64748b; line-height: 1.7; border-top: 1px solid #f1f5f9; padding-top: 0.75rem; }
+  .faq-item.open .faq-a { display: block; }
+
+  /* 상담 신청 폼 */
+  .form-section { background: #0a2540; padding: 2rem 1.25rem; }
+  .form-section h2 { font-size: 20px; font-weight: 700; color: white; text-align: center; margin-bottom: 0.4rem; }
+  .form-section .sub { font-size: 13px; color: #64748b; text-align: center; margin-bottom: 1.5rem; line-height: 1.6; }
+  .finput { width: 100%; padding: 15px 16px; border-radius: 12px; border: 1px solid #1e3a5f; background: #1e3a5f; color: white; font-size: 16px; margin-bottom: 10px; outline: none; -webkit-appearance: none; font-family: inherit; }
+  .finput::placeholder { color: #475569; }
+  .fselect { width: 100%; padding: 15px 16px; border-radius: 12px; border: 1px solid #1e3a5f; background: #1e3a5f; color: #94a3b8; font-size: 16px; margin-bottom: 10px; outline: none; -webkit-appearance: none; font-family: inherit; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+  .fselect option { background: #0f1923; color: white; }
+  .submit-btn { width: 100%; background: #f5a623; color: #3a2500; border: none; padding: 17px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; -webkit-appearance: none; }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .success-box { display: none; background: #1e3a5f; border-radius: 12px; padding: 1.25rem; text-align: center; margin-top: 14px; }
+  .success-box p { color: #93c5fd; font-size: 14px; line-height: 1.7; }
+  .error-box { display: none; background: #3b1a1a; border-radius: 12px; padding: 1rem; text-align: center; margin-top: 14px; }
+  .error-box p { color: #fca5a5; font-size: 13px; line-height: 1.6; }
+
+  /* 하단 연락 바 */
+  .contact-bar { background: white; padding: 1.25rem; display: flex; gap: 10px; border-top: 1px solid #e8edf3; }
+  .contact-btn { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 14px 0; border-radius: 14px; border: 1px solid #e8edf3; background: #f8f9fb; color: #0a2540; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: none; font-family: inherit; }
+
+  /* 푸터 */
+  .footer { background: #f1f5f9; padding: 1.5rem 1.25rem; text-align: center; font-size: 10px; color: #94a3b8; line-height: 2; border-top: 1px solid #e8edf3; }
+</style>
+</head>
+<body>
+
+<!-- 히어로 -->
+<div class="hero">
+  <div class="badge">전기공사업 전문 컨설팅</div>
+  <h1>전기창업경영연구원</h1>
+  <p>신규창업부터 M&A 매입까지<br>전기공사업 면허 취득의 모든 것</p>
+  <div class="cta-row">
+    <a href="tel:0216611861" class="btn-call">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.08 2.18 2 2 0 012.05 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      전화 상담
+    </a>
+    <a href="https://open.kakao.com" class="btn-kakao">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.5 1.5 4.7 3.8 6.1L4.5 21l4.7-2.5c.9.2 1.8.3 2.8.3 5.523 0 10-3.477 10-7.3S17.523 3 12 3z"/></svg>
+      카카오 상담
+    </a>
+  </div>
+</div>
+
+<!-- 서비스 -->
+<div class="section">
+  <div class="section-title">서비스 안내</div>
+  <div class="service-cards" style="grid-template-columns:1fr 1fr 1fr;">
+    <a href="startup.html" style="text-decoration:none;">
+    <div class="service-card" style="cursor:pointer; position:relative;">
+      <div class="svc-icon" style="background:#e6f1fb;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>신규 창업</h3>
+      <p>전기공사업 면허<br>신규 취득 대행</p>
+      <div style="margin-top:8px; font-size:11px; color:#185fa5; font-weight:700;">절차 보기 →</div>
+    </div>
+    </a>
+    <a href="ma.html" style="text-decoration:none;">
+    <div class="service-card" style="cursor:pointer;">
+      <div class="svc-icon" style="background:#faeeda;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ba7517" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>M&A 매입</h3>
+      <p>기존 면허 인수로<br>즉시 사업 시작</p>
+      <div style="margin-top:8px; font-size:11px; color:#ba7517; font-weight:700;">절차 보기 →</div>
+    </div>
+    </a>
+    <a href="listings.html" style="text-decoration:none;">
+    <div class="service-card" style="cursor:pointer;">
+      <div class="svc-icon" style="background:#f0fdf4;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2"><path d="M9 17H5a2 2 0 00-2 2v0a2 2 0 002 2h14a2 2 0 002-2v0a2 2 0 00-2-2h-4"/><rect x="9" y="3" width="6" height="14" rx="1"/></svg>
+      </div>
+      <h3>양도양수<br>매물</h3>
+      <p>전국 매물<br>실시간 확인</p>
+      <div style="margin-top:8px; font-size:11px; color:#166534; font-weight:700;">매물 보기 →</div>
+    </div>
+    </a>
+  </div>
+</div>
+
+<!-- 상담 신청 폼 -->
+<div class="form-section">
+  <h2>무료 상담 신청</h2>
+  <p class="sub">연락처를 남겨주시면<br>전문가가 바로 연락드립니다</p>
+  <input class="finput" type="text" id="name" placeholder="성함" autocomplete="name" />
+  <input class="finput" type="tel" id="phone" placeholder="연락처 (010-0000-0000)" autocomplete="tel" />
+  <select class="fselect" id="interest">
+    <option value="">관심 서비스 선택</option>
+    <option value="startup">신규 창업 (면허 신규 취득)</option>
+    <option value="ma">M&A 매입 (기존 업체 인수)</option>
+    <option value="both">둘 다 알고 싶어요</option>
+  </select>
+  <button class="submit-btn" id="submitBtn" onclick="submitForm()">상담 신청하기</button>
+  <div class="success-box" id="successBox">
+    <p>✅ 상담 신청이 완료되었습니다.<br>담당자가 빠르게 연락드리겠습니다.</p>
+  </div>
+  <div class="error-box" id="errorBox">
+    <p>⚠️ 신청 중 오류가 발생했습니다.<br>02-1661-1861로 직접 연락 주세요.</p>
+  </div>
+</div>
+
+<!-- 하단 연락 바 -->
+<div class="contact-bar" style="flex-wrap:wrap; gap:8px;">
+  <a href="compare.html" class="contact-btn" style="min-width:calc(33% - 6px);">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a2540" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+    창업비교
+  </a>
+  <a href="qna.html" class="contact-btn" style="min-width:calc(33% - 6px);">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a2540" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+    Q&A
+  </a>
+</div>
+
+<!-- 푸터 -->
+<div class="footer">
+  전기창업경영연구원<br>
+  서울특별시 강남구 테헤란로 152, 41층<br>
+  대표번호 02-1661-1861<br>
+  수신거부 080-000-0000
+</div>
+
+<script>
+const APPS_SCRIPT_URL = "여기에_Apps_Script_웹앱_URL_붙여넣기";
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+
+async function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const interest = document.getElementById('interest').value;
+  if (!name || !phone || !interest) { alert('모든 항목을 입력해주세요.'); return; }
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = '신청 중...';
+  document.getElementById('successBox').style.display = 'none';
+  document.getElementById('errorBox').style.display = 'none';
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, interest })
+    });
+    document.getElementById('successBox').style.display = 'block';
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('interest').value = '';
+  } catch(err) {
+    document.getElementById('errorBox').style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '상담 신청하기';
+  }
+}
+</script>
+</body>
+</html>
