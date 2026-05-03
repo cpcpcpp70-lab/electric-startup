@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/aaa/Downloads/dashboard.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>관리자 대시보드 - 전기창업경영연구원</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+  background: #f8f9fb;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.top-bar {
+  background: #0a2540;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar h1 { font-size: 16px; font-weight: 700; color: white; }
+.logout-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.section { padding: 1.25rem; }
+.section-title {
+  font-size: 11px; font-weight: 700; color: #94a3b8;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.menu-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.menu-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border: 1px solid #e8edf3;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+.menu-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  margin: 0 auto 0.75rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.menu-card h3 { font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 3px; }
+.menu-card p { font-size: 11px; color: #94a3b8; }
+
+.sheet-link {
+  background: white;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid #e8edf3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.sheet-link-info h4 { font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 3px; }
+.sheet-link-info p { font-size: 12px; color: #64748b; }
+.arrow {
+  width: 32px; height: 32px;
+  background: #e6f1fb;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.cta-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; background: #0a2540; color: white;
+  border: none; padding: 16px; border-radius: 12px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  text-decoration: none; font-family: inherit;
+  margin-bottom: 10px;
+}
+.cta-btn-sub {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; background: #f5a623; color: #3a2500;
+  border: none; padding: 15px; border-radius: 12px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  text-decoration: none; font-family: inherit;
+}
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 2;
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>관리자 대시보드</h1>
+  <button class="logout-btn" onclick="logout()">로그아웃</button>
+</div>
+
+<div class="section">
+  <div class="section-title">빠른 메뉴</div>
+  <div class="menu-cards">
+    <a href="https://docs.google.com/spreadsheets" target="_blank" class="menu-card">
+      <div class="menu-icon" style="background:#e6f1fb;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      </div>
+      <h3>구글 스프레드시트</h3>
+      <p>상담/매물 데이터</p>
+    </a>
+    <a href="file:///C:/Users/aaa/Downloads/index.html" class="menu-card">
+      <div class="menu-icon" style="background:#e1f5ee;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </div>
+      <h3>랜딩페이지</h3>
+      <p>고객 화면 보기</p>
+    </a>
+    <a href="file:///C:/Users/aaa/Downloads/listings.html" class="menu-card">
+      <div class="menu-icon" style="background:#faeeda;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><path d="M9 17H5a2 2 0 00-2 2v0a2 2 0 002 2h14a2 2 0 002-2v0a2 2 0 00-2-2h-4"></path><rect x="9" y="3" width="6" height="14" rx="1"></rect></svg>
+      </div>
+      <h3>양도양수 매물</h3>
+      <p>매물 현황 보기</p>
+    </a>
+    <a href="tel:0216611861" class="menu-card">
+      <div class="menu-icon" style="background:#fdecea;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b91c1c" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.08 2.18 2 2 0 012.05 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+      </div>
+      <h3>대표 전화</h3>
+      <p>02-1661-1861</p>
+    </a>
+  </div>
+
+  <div class="section-title">구글 스프레드시트 바로가기</div>
+
+  <a href="https://docs.google.com/spreadsheets" target="_blank" class="sheet-link">
+    <div class="sheet-link-info">
+      <h4>📋 신규상담</h4>
+      <p>업체명 / 대표자 / 연락처 / 상담내용</p>
+    </div>
+    <div class="arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+    </div>
+  </a>
+
+  <a href="https://docs.google.com/spreadsheets" target="_blank" class="sheet-link">
+    <div class="sheet-link-info">
+      <h4>📊 상담관리</h4>
+      <p>앱 신청 자동저장 / 진행상태 관리</p>
+    </div>
+    <div class="arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+    </div>
+  </a>
+
+  <a href="https://docs.google.com/spreadsheets" target="_blank" class="sheet-link">
+    <div class="sheet-link-info">
+      <h4>🏢 매물관리</h4>
+      <p>연도별 실적 / 매매가 / 매물상태</p>
+    </div>
+    <div class="arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+    </div>
+  </a>
+
+  <a href="https://docs.google.com/spreadsheets" target="_blank" class="sheet-link">
+    <div class="sheet-link-info">
+      <h4>📈 대시보드</h4>
+      <p>상담/매물 현황 자동 집계</p>
+    </div>
+    <div class="arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+    </div>
+  </a>
+
+</div>
+
+<div class="footer">
+  전기창업경영연구원 관리자 페이지<br>
+  © 2026 전기창업경영연구원
+</div>
+
+<script>
+// 로그인 확인
+if (sessionStorage.getItem('admin_auth') !== 'true') {
+  window.location.href = 'admin.html';
+}
+
+function logout() {
+  sessionStorage.removeItem('admin_auth');
+  window.location.href = 'admin.html';
+}
+</script>
+
+
+</body></html>
