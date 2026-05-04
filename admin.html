@@ -1,176 +1,67 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>관리자 로그인 - 전기창업경영연구원</title>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자 로그인</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
-  background: #0a2540;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.login-box {
-  background: white;
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  width: 340px;
-  text-align: center;
-}
-.logo {
-  width: 56px; height: 56px;
-  background: #e6f1fb;
-  border-radius: 16px;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.25rem;
-}
-.login-box h1 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #0a2540;
-  margin-bottom: 0.3rem;
-}
-.login-box p {
-  font-size: 13px;
-  color: #94a3b8;
-  margin-bottom: 2rem;
-}
-.pin-display {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 2rem;
-}
-.pin-dot {
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  border: 2px solid #e2e8f0;
-  background: white;
-  transition: all 0.15s;
-}
-.pin-dot.filled {
-  background: #0a2540;
-  border-color: #0a2540;
-}
-.pin-dot.error {
-  background: #ef4444;
-  border-color: #ef4444;
-}
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-.key {
-  background: #f8f9fb;
-  border: 1px solid #e8edf3;
-  border-radius: 12px;
-  padding: 16px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #0a2540;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.1s;
-}
-.key:active { background: #e6f1fb; transform: scale(0.96); }
-.key.del {
-  font-size: 14px;
-  color: #64748b;
-}
-.key.empty { background: transparent; border: none; cursor: default; }
-.error-msg {
-  font-size: 13px;
-  color: #ef4444;
-  height: 20px;
-  margin-top: 0.5rem;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:sans-serif;background:#0a2540;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+.box{background:white;border-radius:20px;padding:2.5rem 2rem;width:320px;text-align:center;}
+h1{font-size:17px;font-weight:700;color:#0a2540;margin-bottom:.3rem;}
+p{font-size:13px;color:#94a3b8;margin-bottom:2rem;}
+.dots{display:flex;justify-content:center;gap:12px;margin-bottom:2rem;}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid #e2e8f0;background:white;}
+.dot.on{background:#0a2540;border-color:#0a2540;}
+.dot.err{background:#ef4444;border-color:#ef4444;}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.key{background:#f8f9fb;border:1px solid #e8edf3;border-radius:12px;padding:16px;font-size:20px;font-weight:700;color:#0a2540;cursor:pointer;}
+.key.del{font-size:13px;color:#64748b;}
+.key.blank{background:transparent;border:none;cursor:default;}
+.msg{font-size:13px;color:#ef4444;margin-top:1rem;min-height:20px;}
 </style>
 </head>
 <body>
-
-<div class="login-box">
-  <div class="logo">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#185fa5" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-  </div>
+<div class="box">
   <h1>전기창업경영연구원</h1>
-  <p>관리자 비밀번호를 입력하세요</p>
-
-  <div class="pin-display" id="pinDisplay">
-    <div class="pin-dot" id="d0"></div>
-    <div class="pin-dot" id="d1"></div>
-    <div class="pin-dot" id="d2"></div>
-    <div class="pin-dot" id="d3"></div>
-    <div class="pin-dot" id="d4"></div>
-    <div class="pin-dot" id="d5"></div>
+  <p>관리자 비밀번호 6자리 입력</p>
+  <div class="dots">
+    <div class="dot" id="d0"></div>
+    <div class="dot" id="d1"></div>
+    <div class="dot" id="d2"></div>
+    <div class="dot" id="d3"></div>
+    <div class="dot" id="d4"></div>
+    <div class="dot" id="d5"></div>
   </div>
-
-  <div class="keypad">
-    <button class="key" onclick="pressKey(&#39;1&#39;)">1</button>
-    <button class="key" onclick="pressKey(&#39;2&#39;)">2</button>
-    <button class="key" onclick="pressKey(&#39;3&#39;)">3</button>
-    <button class="key" onclick="pressKey(&#39;4&#39;)">4</button>
-    <button class="key" onclick="pressKey(&#39;5&#39;)">5</button>
-    <button class="key" onclick="pressKey(&#39;6&#39;)">6</button>
-    <button class="key" onclick="pressKey(&#39;7&#39;)">7</button>
-    <button class="key" onclick="pressKey(&#39;8&#39;)">8</button>
-    <button class="key" onclick="pressKey(&#39;9&#39;)">9</button>
-    <button class="key empty"></button>
-    <button class="key" onclick="pressKey(&#39;0&#39;)">0</button>
-    <button class="key del" onclick="deleteKey()">삭제</button>
+  <div class="keys">
+    <button class="key" onclick="k('1')">1</button>
+    <button class="key" onclick="k('2')">2</button>
+    <button class="key" onclick="k('3')">3</button>
+    <button class="key" onclick="k('4')">4</button>
+    <button class="key" onclick="k('5')">5</button>
+    <button class="key" onclick="k('6')">6</button>
+    <button class="key" onclick="k('7')">7</button>
+    <button class="key" onclick="k('8')">8</button>
+    <button class="key" onclick="k('9')">9</button>
+    <button class="key blank"></button>
+    <button class="key" onclick="k('0')">0</button>
+    <button class="key del" onclick="dl()">삭제</button>
   </div>
-
-  <div class="error-msg" id="errorMsg"></div>
+  <div class="msg" id="msg"></div>
 </div>
-
 <script>
-const PASS = '527452';
-let input = '';
-
-function pressKey(num) {
-  if (input.length >= 6) return;
-  input += num;
-  updateDots();
-  if (input.length === 6) checkPass();
-}
-
-function deleteKey() {
-  input = input.slice(0, -1);
-  updateDots();
-  document.getElementById('errorMsg').textContent = '';
-  document.querySelectorAll('.pin-dot').forEach(d => d.classList.remove('error'));
-}
-
-function updateDots() {
-  for (let i = 0; i < 6; i++) {
-    const dot = document.getElementById('d' + i);
-    dot.classList.toggle('filled', i < input.length);
-  }
-}
-
-function checkPass() {
-  if (input === PASS) {
-    sessionStorage.setItem('admin_auth', 'true');
-    window.location.href = 'dashboard.html';
-  } else {
-    document.querySelectorAll('.pin-dot').forEach(d => {
-      d.classList.remove('filled');
-      d.classList.add('error');
-    });
-    document.getElementById('errorMsg').textContent = '비밀번호가 틀렸습니다.';
-    setTimeout(() => {
-      input = '';
-      updateDots();
-      document.querySelectorAll('.pin-dot').forEach(d => d.classList.remove('error'));
-      document.getElementById('errorMsg').textContent = '';
-    }, 1000);
+var pw='',ok='527452';
+function k(n){if(pw.length>=6)return;pw+=n;upd();if(pw.length===6)chk();}
+function dl(){pw=pw.slice(0,-1);upd();document.getElementById('msg').textContent='';for(var i=0;i<6;i++)document.getElementById('d'+i).className='dot';}
+function upd(){for(var i=0;i<6;i++){document.getElementById('d'+i).className='dot'+(i<pw.length?' on':'');}}
+function chk(){
+  if(pw===ok){localStorage.setItem('kemr_auth','yes');window.location.href='dashboard.html';}
+  else{
+    for(var i=0;i<6;i++)document.getElementById('d'+i).className='dot err';
+    document.getElementById('msg').textContent='비밀번호가 틀렸습니다.';
+    setTimeout(function(){pw='';upd();for(var i=0;i<6;i++)document.getElementById('d'+i).className='dot';document.getElementById('msg').textContent='';},1000);
   }
 }
 </script>
-
-
-</body></html>
+</body>
+</html>
